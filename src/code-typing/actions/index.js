@@ -22,3 +22,9 @@ export const loadCode = () => {
       })
   }
 }
+
+export const typing = (char) => {
+  return (dispatch) => {
+    dispatch(createAction(actionType.TYPING, char))
+  }
+}

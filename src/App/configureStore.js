@@ -5,6 +5,6 @@ import reducers from 'code-typing/reducers'
 
 export default (history) => {
   let middlewares = [thunk, routerMiddleware(history)]
-  let store = createStore(reducers, applyMiddleware(...middlewares))
+  let store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(...middlewares))
   return store
 }
