@@ -1,14 +1,13 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import CodeForm from './components/code-form'
 
 class CodeTyping extends Component {
   render() {
-    return <p>Code Typing</p>
+    return (
+      <CodeForm />
+    )
   }
 }
 
-const mapStateToProps = (state) => {
-  return {code: state.codeTyping.code}
-}
-
-export default connect(mapStateToProps)(CodeTyping)
+export default connect()(CodeTyping)

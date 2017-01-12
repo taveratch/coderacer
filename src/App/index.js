@@ -22,27 +22,6 @@ class App extends Component {
   }
 
   render() {
-    // return (
-    //   <div className="App">
-    //     <p>
-    //       {
-    //         _.map(this.state.data.split('\n'), (line) => {
-    //           return (
-    //             <div>
-    //               {
-    //                 _.map(line.split(''), (char) => {
-    //                   if(char === ' '){ return <span>&nbsp;</span>}
-    //                   else { return <span>{char}</span>}
-    //                 })
-    //               }
-    //               <br></br>
-    //             </div>
-    //           )
-    //         })
-    //       }
-    //     </p>
-    //   </div>
-    // );
     return (
       <div>
         Navbar
