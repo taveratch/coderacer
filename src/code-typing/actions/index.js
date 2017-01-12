@@ -1,4 +1,4 @@
-import actionType, {SERVER_URL} from 'code-typing/constant'
+import actionType, {SERVER_URL} from 'code-typing/constants'
 
 const createAction = (type, payload) =>  ({
   type: type,
@@ -9,9 +9,13 @@ const createAction = (type, payload) =>  ({
 export const loadCode = () => {
   return (dispatch) => {
     dispatch(createAction(actionType.LOAD_CODE_REQUEST))
-    fetch(`${SERVER_URL}/code`)
-      .then(code => {
-        dispatch(createAction(actionType.LOAD_CDOE_SUCCESS, code))
+    fetch(`/api/code-typing/code`)
+      .then(response => {
+        response.text()
+          .then(code => {
+            dispatch(createAction(actionType.LOAD_CODE_SUCCESS, code))
+          })
+
       })
       .catch(error => {
         dispatch(createAction(actionType.LOAD_CODE_ERROR, error))
