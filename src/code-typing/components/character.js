@@ -25,12 +25,12 @@ class Character extends Component {
   }
   render() {
     let style = untypedStyle;
-    if(this.props.character === ' ') return <span>&nbsp;</span> //return spacebar
     if((this.props.currentRow === this.state.row && this.props.currentCol > this.state.col) || this.props.currentRow > this.state.row ) style = passedStyle
     if(this.props.currentRow === this.state.row && this.props.currentCol === this.state.col){
       if(this.props.status === 'wrong') style = wrongStyle
       else style = typingStyle
     }
+    if(this.props.character === ' ') return <span style={style}>&nbsp;</span> //return spacebar
     return (
       <span style={style}>{this.props.character}</span>
     )
